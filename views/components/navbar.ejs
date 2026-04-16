@@ -1,0 +1,34 @@
+<!-- views/components/navbar.ejs -->
+
+<nav class="glass-nav sticky top-0 z-50 border-b border-white/5 bg-dark/80 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center md:gap-8 h-20">
+
+            <!-- Navigation Desktop -->
+            <div class="hidden md:flex items-center space-x-2">
+                <% const links = [
+                    { name: 'Accueil', url: '/', id: 'home' },
+                    { name: 'Projets', url: '/projects', id: 'projects' },
+                    { name: 'Expériences', url: '/experience', id: 'experience' },
+                    { name: 'Contact', url: '/contact', id: 'contact' }
+                ] %>
+                <% links.forEach(link => { %>
+                    <a href="<%= link.url %>" 
+                       class="px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 <%= page === link.id ? 'bg-primary/10 text-primary-light' : 'text-gray-400 hover:text-white hover:bg-white/5' %>">
+                        <%= link.name %>
+                    </a>
+                <% }) %>
+            </div>
+
+            <!-- Menu Mobile (burger) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+

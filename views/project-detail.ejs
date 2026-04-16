@@ -1,0 +1,150 @@
+<!-- views/project-detail.ejs -->
+
+<section class="min-h-screen py-32 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Breadcrumbs & Header -->
+        <div class="mb-16 space-y-6 animate-slide-up">
+            <nav class="flex items-center space-x-3 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <a href="/projects" class="hover:text-primary-light transition-colors">Projets</a>
+                <span class="text-white/20">/</span>
+                <span class="text-white"><%= project.title %></span>
+            </nav>
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div class="space-y-4">
+                    <h1 class="text-5xl md:text-7xl font-black text-white tracking-tighter"><%= project.title %></h1>
+                    <div class="flex flex-wrap gap-3">
+                        <% project.technologies.forEach((tech) => { %>
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-gray-300 uppercase tracking-widest">
+                                <%= tech %>
+                            </span>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="<%= project.link %>" class="btn-primary">Visiter le Site</a>
+                    <button onclick="history.back()" class="btn-secondary">Retour</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Mockup Display -->
+        <div class="relative mb-24 animate-fade-in animate-delay-200">
+            <div class="absolute -inset-10 bg-primary/10 rounded-full blur-[120px] opacity-50"></div>
+            <div class="relative glass-card overflow-hidden aspect-video shadow-3xl bg-dark/40 border-white/10">
+                <img src="<%= project.image %>" alt="<%= project.title %> mockup" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Project Stats/Highlights Info -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24 animate-slide-up animate-delay-300">
+            <div class="glass-card p-6 text-center">
+                <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Durée</div>
+                <div class="text-xl font-bold text-white"><%= project.details.duration %></div>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Équipe</div>
+                <div class="text-xl font-bold text-white"><%= project.details.team %></div>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Réseau</div>
+                <div class="text-xl font-bold text-white">Local / Cloud</div>
+            </div>
+            <div class="glass-card p-6 text-center">
+                <div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Status</div>
+                <div class="text-xl font-bold text-secondary-light flex items-center justify-center">
+                    <span class="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
+                    Actif
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Narrative -->
+        <div class="grid lg:grid-cols-3 gap-20 mb-24">
+            <div class="lg:col-span-2 space-y-16">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-black text-white flex items-center">
+                        <span class="w-1 h-8 bg-primary rounded-full mr-4"></span>
+                        Le Défi
+                    </h2>
+                    <p class="text-xl text-gray-400 leading-relaxed font-light">
+                        <%= project.details.problem %>
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-black text-white flex items-center">
+                        <span class="w-1 h-8 bg-secondary rounded-full mr-4"></span>
+                        La Solution
+                    </h2>
+                    <p class="text-xl text-gray-400 leading-relaxed font-light">
+                        <%= project.details.solution %>
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <h3 class="text-xl font-bold text-white">Fonctionnalités Clés</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <% project.details.features.forEach((feature) => { %>
+                            <div class="glass-card p-6 bg-white/[0.02] border-white/5 flex items-center space-x-4 group hover:border-primary/30 transition-colors">
+                                <div class="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></div>
+                                <span class="text-gray-300 font-medium"><%= feature %></span>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="space-y-12">
+                <div class="glass-card p-10 space-y-8 bg-gradient-to-br from-primary/10 to-transparent">
+                    <h3 class="text-2xl font-black text-white">Interface & Expérience</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Conçu pour offrir une expérience utilisateur sans friction, maximisant l'efficacité opérationnelle et la clarté visuelle.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square glass-card bg-white/5 border-white/5 overflow-hidden">
+                            <img src="/images/ui-thumb-1.jpg" alt="UI" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 transition-all">
+                        </div>
+                        <div class="aspect-square glass-card bg-white/5 border-white/5 overflow-hidden">
+                            <img src="/images/ui-thumb-2.jpg" alt="UI" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 transition-all">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-10 space-y-6 text-center">
+                    <h4 class="text-xs font-bold text-secondary-light uppercase tracking-widest">Résultats</h4>
+                    <div class="text-5xl font-black text-white"><%= project.details.results %></div>
+                    <p class="text-sm text-gray-500">Amélioration mesurée par rapport au système précédent.</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Results / Performance Footer -->
+        <div class="glass-card p-16 bg-gradient-to-br from-dark-lighter to-dark relative overflow-hidden text-center">
+            <div class="absolute inset-0 bg-primary/5 opacity-50"></div>
+            <div class="relative z-10 max-w-2xl mx-auto space-y-8">
+                <h2 class="text-3xl font-black text-white">Impact Technologique</h2>
+                <div class="grid grid-cols-3 gap-8 border-y border-white/10 py-10">
+                    <div>
+                        <div class="text-4xl font-bold text-white">+40%</div>
+                        <div class="text-[10px] font-bold text-gray-500 uppercase mt-1 tracking-tighter">Productivité</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white">-90%</div>
+                        <div class="text-[10px] font-bold text-gray-500 uppercase mt-1 tracking-tighter">Latence</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-white">0.2s</div>
+                        <div class="text-[10px] font-bold text-gray-500 uppercase mt-1 tracking-tighter">Temps de Réponse</div>
+                    </div>
+                </div>
+                <p class="text-gray-400 italic font-serif">
+                    "Une réussite technique qui redéfinit les standards de l'entreprise."
+                    <br>
+                    <span class="text-xs font-bold text-white mt-4 block not-italic">— Directeur Technique, Key Customer</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

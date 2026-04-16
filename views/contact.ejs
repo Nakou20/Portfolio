@@ -1,0 +1,124 @@
+<!-- views/contact.ejs -->
+
+<section class="min-h-screen py-32 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            
+            <!-- Left Content: Info -->
+            <div class="space-y-12 animate-slide-up">
+                <div class="space-y-6">
+                    <h1 class="text-6xl md:text-8xl font-black text-white leading-none tracking-tighter">
+                        Contactez <br>
+                        <span class="text-gradient">Moi</span>
+                    </h1>                   
+                </div>
+
+                <div class="space-y-8">
+                    <!-- CV Card -->
+                    <div class="glass-card p-8 bg-gradient-to-br from-primary/10 to-transparent border-primary/20 max-w-md">
+                        <div class="flex items-center space-x-6">
+                            <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Mon CV</h3>
+                                <p class="text-xs text-gray-400 mb-3 uppercase tracking-tighter font-bold">Document PDF</p>
+                                <a href="/resume.pdf" class="text-sm font-black text-primary-light hover:text-white transition-colors flex items-center">
+                                    Télécharger CV
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <h4 class="text-[10px] font-bold text-primary-light uppercase tracking-widest">Email Direct</h4>
+                            <p class="text-lg font-bold text-white"><%= portfolio.contact.email %></p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-[10px] font-bold text-primary-light uppercase tracking-widest">Localisation</h4>
+                            <p class="text-lg font-bold text-white"><%= portfolio.contact.location %></p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-[10px] font-bold text-primary-light uppercase tracking-widest">Réseaux</h4>
+                            <div class="flex items-center space-x-4">
+                                <a href="<%= portfolio.socials.linkedin %>" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                                <a href="<%= portfolio.socials.github %>" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content: Form -->
+            <div class="animate-fade-in animate-delay-200">
+                <div class="glass-card p-10 bg-white/[0.03] relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary to-secondary"></div>
+                    
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label for="name" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Nom complet</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" placeholder="Prénom Nom">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Email professionnel</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" placeholder="exemple@mail.com">
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label for="subject" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Objet du message</label>
+                            <input type="text" id="subject" name="subject" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" placeholder="Nouveau projet ambitieux">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors resize-none" placeholder="Comment puis-je vous aider ?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary !font-black !text-lg py-5 group">
+                            Envoyer le message
+                            <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Message (hidden) -->
+                    <div id="success-msg" class="hidden absolute inset-0 bg-dark/95 backdrop-blur flex flex-col items-center justify-center text-center p-10">
+                        <div class="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mb-6">
+                            <svg class="w-10 h-10 text-secondary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                        <h3 class="text-3xl font-black text-white mb-2">Message Envoyé !</h3>
+                        <p class="text-gray-400">Je reviens vers vous dans les prochaines 24 heures.</p>
+                        <button onclick="location.reload()" class="mt-8 text-primary-light font-bold hover:text-white">Envoyer un autre message</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        
+        try {
+            const response = await fetch('/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            if (result.success) {
+                document.getElementById('success-msg').classList.remove('hidden');
+            }
+        } catch (err) {
+            alert('Une erreur est survenue lors de l\'envoi du message.');
+        }
+    });
+</script>

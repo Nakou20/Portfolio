@@ -1,0 +1,180 @@
+<!-- views/experience.ejs -->
+
+<section class="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="mb-16 text-center">
+            <h1 class="section-title">Expériences & Compétences</h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                Mon parcours professionnel et les compétences que j'ai développées au fil des années.
+            </p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid md:grid-cols-2 max-w-2xl mx-auto gap-6 mb-16">
+            <div class="card text-center">
+                <div class="text-4xl font-bold text-indigo-400 mb-2"><%= stats.yearsExperience %>+</div>
+                <div class="text-gray-400">Ans d'expérience</div>
+            </div>
+            <div class="card text-center">
+                <div class="text-4xl font-bold text-indigo-400 mb-2"><%= stats.projectsCompleted %></div>
+                <div class="text-gray-400">Projets réalisés</div>
+            </div>
+        </div>
+
+        <!-- Timeline des Expériences -->
+        <h2 class="section-title">Parcours Professionnel</h2>
+        <div class="space-y-8 mb-16">
+            <% experiences.forEach((exp, index) => { %>
+                <div class="card border-l-4 border-indigo-600 hover:border-cyan-600 transition-colors">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white"><%= exp.title %></h3>
+                            <p class="text-indigo-400 font-semibold"><%= exp.company %></p>
+                        </div>
+                        <span class="text-gray-400 mt-2 md:mt-0"><%= exp.duration %></span>
+                    </div>
+
+                    <p class="text-gray-400 mb-6"><%= exp.description %></p>
+
+                    <!-- Achievements -->
+                    <div class="mb-6">
+                        <p class="text-sm text-gray-500 mb-3">Réalisations principales :</p>
+                        <ul class="space-y-2">
+                            <% exp.achievements.forEach((achievement) => { %>
+                                <li class="flex items-start space-x-2 text-gray-300">
+                                    <svg class="w-4 h-4 text-cyan-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span><%= achievement %></span>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+
+                    <!-- Technologies -->
+                    <div>
+                        <p class="text-sm text-gray-500 mb-3">Technologies utilisées :</p>
+                        <div class="flex flex-wrap gap-2">
+                            <% exp.technologies.forEach((tech) => { %>
+                                <span class="px-3 py-1 bg-indigo-600/20 text-indigo-400 text-xs rounded-full">
+                                    <%= tech %>
+                                </span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <!-- Technical Skills -->
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-8">Compétences Techniques</h2>
+
+                <!-- Frontend -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-white mb-4">Frontend</h3>
+                    <div class="space-y-3">
+                        <% skills.frontend.forEach((skill) => { %>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300"><%= skill %></span>
+                                    <span class="text-indigo-400 text-sm">90%</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-indigo-600 to-cyan-600" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-white mb-4">Backend</h3>
+                    <div class="space-y-3">
+                        <% skills.backend.forEach((skill) => { %>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300"><%= skill %></span>
+                                    <span class="text-indigo-400 text-sm">85%</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-indigo-600 to-cyan-600" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-8">Compétences Personnelles</h2>
+
+                <!-- Database -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-white mb-4">Bases de Données</h3>
+                    <div class="space-y-3">
+                        <% skills.database.forEach((skill) => { %>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300"><%= skill %></span>
+                                    <span class="text-indigo-400 text-sm">88%</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-indigo-600 to-cyan-600" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-white mb-4">Outils & DevOps</h3>
+                    <div class="space-y-3">
+                        <% skills.tools.forEach((skill) => { %>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300"><%= skill %></span>
+                                    <span class="text-indigo-400 text-sm">80%</span>
+                                </div>
+                                <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-indigo-600 to-cyan-600" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills Grid -->
+        <h2 class="text-3xl font-bold text-white mb-8">Qualités Personnelles</h2>
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            <% softSkills.forEach((skill) => { %>
+                <div class="card text-center hover:border-indigo-600 transition-colors">
+                    <div class="w-12 h-12 bg-indigo-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white"><%= skill %></h3>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-r from-indigo-600/20 to-cyan-600/20 rounded-2xl p-12 text-center border border-slate-600">
+            <h2 class="text-3xl font-bold text-white mb-4">Télécharger mon CV complet</h2>
+            <p class="text-gray-400 mb-8">Accédez à la version PDF de mon CV pour plus de détails sur mes compétences et réalisations.</p>
+            <a href="#" class="btn-primary">
+                Télécharger CV (PDF)
+            </a>
+        </div>
+    </div>
+</section>
+

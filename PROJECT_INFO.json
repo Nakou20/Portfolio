@@ -1,0 +1,233 @@
+{
+  "project": {
+    "name": "Portfolio MVC avec TailwindCSS",
+    "version": "1.0.0",
+    "description": "Portfolio professionnel complet avec architecture MVC, Express.js et TailwindCSS",
+    "status": "PRODUCTION READY",
+    "createdDate": "2026-04-12",
+    "author": "Développeur Full-Stack"
+  },
+
+  "technology": {
+    "backend": {
+      "runtime": "Node.js v14+",
+      "framework": "Express.js v4.18",
+      "templateEngine": "EJS v3.1"
+    },
+    "frontend": {
+      "cssFramework": "TailwindCSS v3.4",
+      "javascript": "Vanilla JavaScript",
+      "design": "Mobile-First Responsive"
+    },
+    "build": {
+      "css": "PostCSS v8.4",
+      "prefixer": "Autoprefixer v10.4",
+      "tailwindCli": "Tailwind CLI"
+    }
+  },
+
+  "structure": {
+    "models": [
+      "Portfolio.js",
+      "Project.js",
+      "Experience.js"
+    ],
+    "controllers": [
+      "homeController.js",
+      "projectController.js",
+      "experienceController.js"
+    ],
+    "views": [
+      "home.ejs",
+      "projects.ejs",
+      "project-detail.ejs",
+      "experience.ejs",
+      "contact.ejs",
+      "404.ejs",
+      "layout.ejs",
+      "components/navbar.ejs",
+      "components/footer.ejs"
+    ],
+    "routes": [
+      "index.js"
+    ],
+    "static": {
+      "css": ["input.css", "output.css"],
+      "js": ["main.js"]
+    },
+    "config": [
+      "app.js",
+      "package.json",
+      "tailwind.config.js",
+      "postcss.config.js"
+    ]
+  },
+
+  "pages": [
+    {
+      "name": "Accueil",
+      "url": "http://localhost:3000",
+      "path": "/",
+      "template": "home.ejs",
+      "controller": "homeController.getHome",
+      "description": "Page d'accueil avec présentation et stack technique"
+    },
+    {
+      "name": "Projets",
+      "url": "http://localhost:3000/projects",
+      "path": "/projects",
+      "template": "projects.ejs",
+      "controller": "projectController.getProjects",
+      "description": "Grille responsive de tous les projets"
+    },
+    {
+      "name": "Détail Projet",
+      "url": "http://localhost:3000/projects/1",
+      "path": "/projects/:id",
+      "template": "project-detail.ejs",
+      "controller": "projectController.getProjectDetail",
+      "description": "Page détaillée d'un projet spécifique"
+    },
+    {
+      "name": "Expériences",
+      "url": "http://localhost:3000/experience",
+      "path": "/experience",
+      "template": "experience.ejs",
+      "controller": "experienceController.getExperience",
+      "description": "Timeline des expériences et compétences"
+    },
+    {
+      "name": "Contact",
+      "url": "http://localhost:3000/contact",
+      "path": "/contact",
+      "template": "contact.ejs",
+      "controller": "experienceController.getContact",
+      "description": "Formulaire de contact et informations"
+    },
+    {
+      "name": "Erreur 404",
+      "url": "http://localhost:3000/404",
+      "path": "*",
+      "template": "404.ejs",
+      "description": "Page d'erreur 404"
+    }
+  ],
+
+  "features": [
+    "Architecture MVC complète",
+    "Design responsive (Mobile-First)",
+    "Thème sombre moderne",
+    "TailwindCSS intégré",
+    "Navigation fluide",
+    "Menu hamburger mobile",
+    "Formulaire de contact",
+    "Animations CSS fluides",
+    "Grille de projets dynamique",
+    "Timeline des expériences",
+    "Barres de compétences",
+    "Page d'erreur 404",
+    "Réseaux sociaux intégrés",
+    "SEO ready",
+    "Performance optimisée",
+    "Accessibilité"
+  ],
+
+  "colors": {
+    "theme": "Dark",
+    "primary": "#6366f1",
+    "secondary": "#1e293b",
+    "accent": "#0ea5e9",
+    "background": "#0f172a",
+    "text": "#f3f4f6",
+    "borders": "#334155"
+  },
+
+  "breakpoints": {
+    "mobile": "320px",
+    "tablet": "768px",
+    "desktop": "1024px",
+    "large": "1280px"
+  },
+
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css",
+    "watch:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+
+  "deployment": {
+    "vercel": {
+      "command": "npm install -g vercel && vercel",
+      "cost": "Free",
+      "description": "Deployment facile et rapide"
+    },
+    "heroku": {
+      "command": "heroku create votre-portfolio && git push heroku main",
+      "cost": "Free (avec limitations)",
+      "description": "Platform as a Service"
+    },
+    "railway": {
+      "cost": "Free/Payant",
+      "description": "Déploiement via GitHub"
+    },
+    "render": {
+      "cost": "Free/Payant",
+      "description": "Déploiement via GitHub"
+    }
+  },
+
+  "statistics": {
+    "filesCreated": 25,
+    "foldersCreated": 7,
+    "pagesCreated": 6,
+    "routesApi": 7,
+    "components": 2,
+    "controllers": 3,
+    "models": 3,
+    "cssClasses": 500,
+    "projectSize": "~2MB (sans node_modules)"
+  },
+
+  "documentation": [
+    {
+      "file": "README.md",
+      "description": "Guide complet du projet"
+    }
+  ],
+
+  "customization": {
+    "personalInfo": "models/Portfolio.js",
+    "projects": "models/Project.js",
+    "experiences": "models/Experience.js",
+    "colors": "tailwind.config.js",
+    "styling": "public/css/input.css"
+  },
+
+  "requirements": {
+    "nodejs": "v14 ou supérieur",
+    "npm": "v6 ou supérieur",
+    "navigateur": "Chrome, Firefox, Safari, Edge"
+  },
+
+  "nextSteps": [
+    "1. Lancer: npm start",
+    "2. Tester: http://localhost:3000",
+    "3. Modifier: models/Portfolio.js",
+    "4. Ajouter: vos projets et expériences"
+  ],
+
+  "resources": {
+    "expressjs": "https://expressjs.com/",
+    "ejs": "https://ejs.co/",
+    "tailwindcss": "https://tailwindcss.com/",
+    "nodejs": "https://nodejs.org/",
+    "mdnWebDocs": "https://developer.mozilla.org/",
+    "vercel": "https://vercel.com/"
+  },
+
+  "license": "BTS SIO 2024 - Portfolio Personnel - Non Commercial",
+  "repository": "https://github.com/Nakou20/portfolio",
+  "author": "Sasha Mangin"
+}
+

@@ -19,11 +19,11 @@ class ProjectModel {
         1,
         "French Legacy website",
         "Site vitrine pour un server communautaire nommée French Legacy",
-        "/images/nexus-erp.jpg",
+        "/images/FrenchLeagacy.webp",
         ["Next.js", "Node.js","TailwindCSS"],
         "#",
         {
-          problem: "Nécessité d'un système ERP moderne et scalable",
+          problem: "Nécessité d'un site vitrine moderne et scalable",
           solution: "Développement d'une plateforme web complète avec architecture microservices",
           features: ["Rapports en temps réel", "API RESTful"],
           team: "3 développeurs",
@@ -34,7 +34,7 @@ class ProjectModel {
         2,
         "Blog Laravel",
         "Blog personnel développé avec Laravel pour partager des articles techniques",
-        "/images/la-solution.jpg",
+        "/images/LaraBlog.webp",
         ["Laravel", "JavaScript", "MySQL", "Docker"],
         "#",
         {
@@ -49,7 +49,7 @@ class ProjectModel {
         3,
         "Angers Scoot",
         "Application administrative de location de scooters électriques pour la ville d'Angers",
-        "/images/stack-ecosystem.jpg",
+        "/images/AngerScoot.webp",
         ["C#", "SQL Server", "Windows Forms"],
         "#",
         {

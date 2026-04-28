@@ -40,11 +40,13 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Portfolio démarré sur http://localhost:${PORT}`);
-    console.log(`📱 Accédez au portfolio sur http://localhost:${PORT}`);
-    console.log(`🛑 Appuyez sur Ctrl+C pour arrêter le serveur`);
-});
+if (!process.env.NETLIFY) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Portfolio démarré sur http://localhost:${PORT}`);
+        console.log(`📱 Accédez au portfolio sur http://localhost:${PORT}`);
+        console.log(`🛑 Appuyez sur Ctrl+C pour arrêter le serveur`);
+    });
+}
 
 module.exports = app;
 

@@ -1,0 +1,11 @@
+[build]
+  command = "npm install && npm run build:css"
+  publish = "public"
+
+[functions]
+  included_files = ["views/**", "public/**", "models/**", "controllers/**", "routes/**"]
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200

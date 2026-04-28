@@ -59,6 +59,21 @@ class ProjectModel {
           team: "2 développeurs",
           duration: "2 mois"
         }
+      ),
+      new Project(
+        4,
+        "CDS 49 Auto Ecole",
+        "Application de gestion pour une auto-école située à Angers",
+        "/images/CDS49AutoEcole.webp",
+        ["PHP", "SQL Server", "Bootstrap"],
+        "#",
+        {
+        problem: "Moderniser son offre de services et améliorer la gestion administrative de l'auto-école",
+        solution: "Mise à jour d'une application web pour gérer les inscriptions et les plannings de cours pour les élèves",
+        features: ["Gestion des étudiants", "Planification des cours", "Suivi des progrès"],
+        team: "3 développeurs",
+        duration: "2 mois"
+        }
       )
     ];
   }

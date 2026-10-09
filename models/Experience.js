@@ -19,11 +19,23 @@ class ExperienceModel {
         "Saint Aubin La Salle",
         "Développement et maintenance de solutions web pour la gestion scolaire",
         ["WordPress", "PHP", "MySQL", "JavaScript"],
-        "2025 - Présent",
+        "2025 - 2026",
         [
           "Création de sites web pour l'établissement scolaire",
           "Maintenance et mises à jour régulières de la plateforme existante",
           "Formation du personnel à l'utilisation des outils numériques",
+        ]
+      ),
+      new Experience(
+        "Data Analyst",
+        "Vilmorin Mikado",
+        "Analyse et interprétation des données pour l'amélioration des processus de l'établissement",
+        ["Python", "SQL", "Tableau", "Power BI"],
+        "2026 - 2027",
+        [
+          "Analyse des données pour identifier les tendances et les opportunités",
+          "Création de rapports et de tableaux de bord pour communiquer les résultats",
+          "Collaboration avec les équipes pour comprendre leurs besoins en matière de données",
         ]
       ),
     ];
@@ -31,7 +43,7 @@ class ExperienceModel {
     this.skills = {
       frontend: ["React", "Vue.js", "Next.js", "TailwindCSS", "TypeScript", "JavaScript"],
       backend: ["Node.js", "Express", "Java","Python"],
-      database: ["PostgreSQL", "MongoDB", "MySQL"],
+      database: ["PostgreSQL", "MongoDB", "MySQL","Power BI"],
       tools: ["Docker", "AWS", "Git", "GitHub Actions", "Vercel"]
     };
 

@@ -15,18 +15,6 @@ class ExperienceModel {
   constructor() {
     this.experiences = [
       new Experience(
-        "Développeur Web",
-        "Saint Aubin La Salle",
-        "Développement et maintenance de solutions web pour la gestion scolaire",
-        ["WordPress", "PHP", "MySQL", "JavaScript"],
-        "2025 - 2026",
-        [
-          "Création de sites web pour l'établissement scolaire",
-          "Maintenance et mises à jour régulières de la plateforme existante",
-          "Formation du personnel à l'utilisation des outils numériques",
-        ]
-      ),
-      new Experience(
         "Data Analyst",
         "Vilmorin Mikado",
         "Analyse et interprétation des données pour l'amélioration des processus de l'établissement",
@@ -38,6 +26,19 @@ class ExperienceModel {
           "Collaboration avec les équipes pour comprendre leurs besoins en matière de données",
         ]
       ),
+      new Experience(
+        "Développeur Web",
+        "Saint Aubin La Salle",
+        "Développement et maintenance de solutions web pour la gestion scolaire",
+        ["WordPress", "PHP", "MySQL", "JavaScript"],
+        "2025 - 2026",
+        [
+          "Création de sites web pour l'établissement scolaire",
+          "Maintenance et mises à jour régulières de la plateforme existante",
+          "Formation du personnel à l'utilisation des outils numériques",
+        ]
+      ),
+      
     ];
 
     this.skills = {
